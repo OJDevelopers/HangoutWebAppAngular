@@ -10,7 +10,7 @@
  */
 angular
   .module('hangoutWebAppAngularApp', [
-    'ngRoute',
+    'ngRoute','lumx'
   ])
   .config(function ($routeProvider) {
     $routeProvider
@@ -19,6 +19,11 @@ angular
         controller: 'MainCtrl',
         controllerAs: 'main'
       })
+
+        .when('/crear', {
+            templateUrl: 'views/crear.html'
+        })
+
       .when('/about', {
         templateUrl: 'views/about.html',
         controller: 'AboutCtrl',

@@ -59,6 +59,21 @@ body {
   margin-top: 28px;
 }
 
+
+.txt-error{
+    color:red;
+    font-size:12px;
+}
+
+.input-correcto{
+    display:none;
+}
+
+.input-incorrecto{
+    display:block;
+}
+
+
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
   .container {
