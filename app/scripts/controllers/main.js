@@ -8,7 +8,16 @@
  * Controller of the hangoutWebAppAngularApp
  */
 angular.module('hangoutWebAppAngularApp')
-  .controller('MainCtrl', function () {
+  .controller('MainCtrl', function ($scope, LxDialogService, LxNotificationService) {
+
+      $scope.opendDialog = function (dialogId) {
+          LxDialogService.open(dialogId);
+      };
+
+      $scope.closingDialog = function () {
+          LxNotificationService.info('Se cierra el modal');
+      };
+
     this.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',

@@ -1,23 +1,70 @@
-<div class="jumbotron">
-  <h1>'Allo, 'Allo!</h1>
-  <p class="lead">
-    <img src="images/yeoman.png" alt="I'm Yeoman"><br>
-    Always a pleasure scaffolding your apps.
-  </p>
-  <p><a class="btn btn-lg btn-success" ng-href="#/">Splendid!<span class="glyphicon glyphicon-ok"></span></a></p>
+<div class="container-fluid">
+    <h2>Usuarios</h2>
+    <div class="row">
+        <div class="col-md-12">
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Apellidos</th>
+                        <th>Edad</th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>Daniel</td>
+                        <td>Vargas</td>
+                        <td>19</td>
+                        <td><button class="btn btn--m btn--blue btn--raised" ng-click="opendDialog('Crear')" lx-ripple>Editar</button></td>
+                        <td><button class="btn btn--m btn--blue btn--raised" lx-ripple>Eliminar</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
 </div>
 
-<div class="row marketing">
-  <h4>HTML5 Boilerplate</h4>
-  <p>
-    HTML5 Boilerplate is a professional front-end template for building fast, robust, and adaptable web apps or sites.
-  </p>
+<lx-dialog class="dialog dialog--l" id="Crear" auto-close="true" onclose="closingDialog()" onscrollend="scrollEndDialog()">
+    <div class="dialog__header">
+        <div class="toolbar bgc-light-blue-500 pl++">
+            <span class="toolbar__label tc-white fs-title">
+                Editar usuario
+            </span>
 
-  <h4>Angular</h4>
-  <p>
-    AngularJS is a toolset for building the framework most suited to your application development.
-  </p>
+            <div class="toolbar__right">
+                <div class="switch">
+                </div>
+            </div>
+        </div>
+    </div>
 
-  <h4>Karma</h4>
-  <p>Spectacular Test Runner for JavaScript.</p>
-</div>
+    <div class="dialog__content">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <lx-text-field label="Nombres">
+                        <input type="text" ng-model="textFields.nombre">
+                    </lx-text-field>
+                    <p class="txt-error input-correcto">Campo vac&iacute;o o incorrecto</p>
+                    <lx-text-field label="Apellidos">
+                        <input type="text" ng-model="textFields.apellido">
+                    </lx-text-field>
+                    <p class="txt-error input-correcto">Campo vac&iacute;o o incorrecto</p>
+                    <lx-text-field label="Edad">
+                        <input type="number" ng-model="textFields.edad">
+                    </lx-text-field>
+                    <p class="txt-error input-correcto">Campo vac&iacute;o o incorrecto</p>
+                    <br />
+                    <button class="btn btn--m btn--blue btn--raised" lx-ripple>Guardar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="dialog__actions">
+        <button class="btn btn--m btn--black btn--flat" lx-ripple lx-dialog-close>Cancelar</button>
+    </div>
+</lx-dialog>
