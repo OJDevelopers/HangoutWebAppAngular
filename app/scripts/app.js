@@ -10,14 +10,7 @@
  */
 angular
   .module('hangoutWebAppAngularApp', [
-    'ngAnimate',
-    'ngAria',
-    'ngCookies',
-    'ngMessages',
-    'ngResource',
     'ngRoute',
-    'ngSanitize',
-    'ngTouch'
   ])
   .config(function ($routeProvider) {
     $routeProvider
